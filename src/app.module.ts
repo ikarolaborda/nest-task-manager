@@ -5,6 +5,7 @@ import { Task } from './tasks/task.entity';
 import { TasksService } from './tasks/tasks.service';
 import { TypeormConfig } from '../config/typeorm.config';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { UsersModule } from './users/users.module';
     TypeOrmModule.forRoot(TypeormConfig),
     TypeOrmModule.forFeature([Task]),
     UsersModule,
+    AuthModule,
   ],
   providers: [TasksService],
   controllers: [],
